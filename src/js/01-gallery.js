@@ -1,8 +1,7 @@
-import { galleryItems } from "./gallery-items.js";
-// Opisany w dokumentacji
 import SimpleLightbox from "simplelightbox";
-// Dodatkowy import stylów
-import "node_modules/simplelightbox/dist/simple-lightbox.min.css";
+import "simplelightbox/dist/simple-lightbox.min.css";
+import { galleryItems } from "./gallery-items.js";
+
 const galleryEl = document.querySelector(".gallery");
 
 for (const img of galleryItems) {
@@ -19,10 +18,9 @@ for (const img of galleryItems) {
   galleryEl.insertAdjacentHTML("beforeend", listEl);
 }
 
+import SimpleLightbox from "simplelightbox";
 galleryEl.addEventListener("click", (event) => {
   event.preventDefault();
-  const box = basicLightbox.create(
-    `<img src="${event.target.dataset.source}">`
-  );
+  const box = new SimpleLightbox(`<img src="${event.target.dataset.source}">`);
   box.show();
 });
