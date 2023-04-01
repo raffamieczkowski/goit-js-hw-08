@@ -1,0 +1,20 @@
+{
+  "name": "test-node",
+  "version": "1.0.0",
+  "description": "",
+   "homepage": "https://raffamieczkowski.github.io/puste-repo/",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /puste-repo/"
+  },
+    "repository": {
+    "type": "git",
+    "url": "git+https://raffamieczkowski.github.io/puste-repo/.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
