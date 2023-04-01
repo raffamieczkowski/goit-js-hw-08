@@ -1,6 +1,8 @@
 import { galleryItems } from "./gallery-items.js";
-// Change code below this line
-
+// Opisany w dokumentacji
+import SimpleLightbox from "simplelightbox";
+// Dodatkowy import stylów
+import "node_modules/simplelightbox/dist/simple-lightbox.min.css";
 const galleryEl = document.querySelector(".gallery");
 
 for (const img of galleryItems) {
