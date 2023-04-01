@@ -1,6 +1,7 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from "./gallery-items.js";
+// Change code below this line
 
 const galleryEl = document.querySelector(".gallery");
 
@@ -17,8 +18,8 @@ for (const img of galleryItems) {
   </div>`;
   galleryEl.insertAdjacentHTML("beforeend", listEl);
 }
-galleryEl.addEventListener("click", (event) => {
-  event.preventDefault();
-  const box = new SimpleLightbox(`<img src="${event.target.dataset.source}">`);
-  box.show();
+const lightbox = new SimpleLightbox(".gallery a", {
+  captions: true,
+  captionDelay: 250,
+  captionsData: "alt",
 });
