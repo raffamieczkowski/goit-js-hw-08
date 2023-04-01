@@ -17,8 +17,6 @@ for (const img of galleryItems) {
   </div>`;
   galleryEl.insertAdjacentHTML("beforeend", listEl);
 }
-
-import SimpleLightbox from "simplelightbox";
 galleryEl.addEventListener("click", (event) => {
   event.preventDefault();
   const box = new SimpleLightbox(`<img src="${event.target.dataset.source}">`);
