@@ -5,8 +5,6 @@ const emailInput = form.querySelector('[name="email"]');
 const messageInput = form.querySelector('[name="message"]');
 
 const localStorageKey = 'feedback-form-state';
-
-// Load form state from localStorage on page load
 window.addEventListener('load', () => {
   const formState = JSON.parse(localStorage.getItem(localStorageKey));
   if (formState) {
@@ -14,8 +12,6 @@ window.addEventListener('load', () => {
     messageInput.value = formState.message;
   }
 });
-
-// Save form state to localStorage on every input change
 form.addEventListener(
   'input',
   throttle(() => {
@@ -26,8 +22,6 @@ form.addEventListener(
     localStorage.setItem(localStorageKey, JSON.stringify(formState));
   }, 500)
 );
-
-// Clear form and localStorage on form submit
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   console.log('Form submitted with data:', {
